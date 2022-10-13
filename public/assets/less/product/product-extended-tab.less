@@ -1,0 +1,206 @@
+.tab-nav-holder{
+	display: block;
+	text-align: center;
+
+	.nav-tabs{
+		display: inline-block;
+		border-bottom: none;
+		> li{
+			> a{
+				font-size: 28px;
+				font-weight: @opensans-normal;
+				border: none;
+				color: #b2b2b2;
+				&:hover,
+				&:focus{
+					color:@black-text;
+					background: rgba(0,0,0,0);
+					border: none;
+				}
+			}
+			&.active{
+				a{
+					color: @black-text;
+					font-weight: @opensans-bold;
+				}
+				&:after{
+					background: #b2b2b2;
+					content: "";
+					height: 1px;
+					display: block;
+					width: 46%;
+					margin: 0 auto;
+				}
+			}
+		}
+	}
+	&.single-product-tab{
+		.nav-tabs{
+			> li{
+				> a{
+					font-size: 24px;
+					padding: 10px 32px;
+				}
+			}
+		}
+	}
+}
+
+.tab-content{
+	.express-yourself-block{
+		position:relative;
+		.image{
+			> img{
+				width:100%;
+				height:auto;
+				display:block;
+			}
+		}
+		.caption{
+			 position: absolute;               
+			   top: 50%;                        
+			   transform: translate(0, -50%);
+			   width:100%;
+			.container{
+				.section{					
+					position:relative;
+					.express-yourself{
+                      font-size:27px;                
+		                font-weight: @opensans-normal;
+		                letter-spacing:0.1em;
+		                color:@black-text;
+		                text-align:center;
+		                margin-bottom:0px;
+					}
+					.owl-style{
+                       font-size:57px;                
+		                font-weight: @opensans-bold;
+		                letter-spacing:0.15em;
+		                color:@black-text;
+		                margin-top:5px;
+					}
+					&:before{
+						background:#8e8e8e;
+						width:77px;
+						height:2px;
+						content:"";
+						display:block;
+						margin:auto auto 30px;
+						
+					}
+				}
+			}
+		}
+	}
+	.beautifully-crafted-block{
+		position:relative;
+		background:#ccc;
+		height:971px;
+		background:url("../images/products/des3.jpg") no-repeat scroll center center rgba(0, 0, 0, 0);
+		   .right-content{
+		   	padding-top: 170px;/*285px;*/
+			   	.header{
+			   		.beautiful-text{
+	                    font-size:54px;                
+		                font-weight: @opensans-normal;
+		                color:@black-text;
+		                margin-bottom: 24px;
+			              
+			   		}
+			   		.tagline{
+		   			    font-size:21px;                
+		                font-weight: @opensans-normal;
+		                letter-spacing:0.025em;
+		                color:@black-text;
+			   		}
+			   		&:after{
+			   			background:#8e8e8e;
+						width:72px;
+						height:2px;
+						content:"";
+						display:block;
+						margin-top:65px;
+			   		}
+			   	}
+			   	.section{
+			   		padding-top:30px;
+			   		width:61%;
+			   		.title,
+			   		.text{
+			   			font-size:14px;                		                
+		                letter-spacing:0.025em;		                
+		                line-height:24px;
+		                letter-spacing:0.010em;
+			   		}
+			   		.title{
+			   			font-weight: @opensans-bold;
+			   			color:@black-text;
+			   			margin-bottom:20px;
+			   		}
+			   		.text{
+			   			font-weight: @opensans-normal;
+			   			color:#5a5a5a;
+			   			margin-bottom: 21px;
+			   		}
+			   	}
+		   }
+		
+	}
+	.banner{
+		position:relative;
+		height:473px;
+		.dolman-style,
+		.pocket-style{
+			width:50%;
+		}
+		.dolman-style{
+			background:url("../images/products/des4.jpg") no-repeat scroll center center rgba(0, 0, 0, 0);
+			position:relative;
+			height:473px;
+			float:left;
+			.banner-text{
+				position:absolute;
+				width:42%;
+				right:2%;
+				top:40%;
+			}
+		}
+		.pocket-style{
+			background:url("../images/products/des5.jpg") no-repeat scroll center center rgba(0, 0, 0, 0);
+			position:relative;
+			height:473px;
+			float:right;
+			.banner-text{
+				position:absolute;
+				width:42%;
+				left:6%;
+				top:40%;
+			}
+		}
+		.banner-text{			
+			.title{
+               font-weight: @opensans-bold;
+               color:@black-text;
+                margin-bottom: 30px;
+			}
+			.text,
+			.text{
+                font-size:14px;                	                
+                letter-spacing:0.01em;	                
+                line-height:24px;	                
+			}
+			.text{
+				font-weight: @opensans-normal;
+               color:#5a5a5a;
+			}
+			&:before{
+				background:#8e8e8e;
+				width:74px;
+				height:2px;
+				content:"";
+				display:block;
+				margin-bottom:30px;
+			}
+		}
+	}
+}

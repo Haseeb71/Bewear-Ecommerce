@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<body class="hold-transition sidebar-mini layout-fixed">
+    
+<div class="wrapper">
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1 class="m-0"><%=product.name%> Details</h1>
+          </div><!-- /.col -->
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="/dashboard">Home</a></li>
+              <li class="breadcrumb-item active">Dashboard v1</li>
+            </ol>
+          </div><!-- /.col -->
+        </div><!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </div>
+    <!-- /.content-header -->
+    <!-- form -->
+
+<div class="container ">
+  <div class="row">
+
+    <div class="col-md-6 bg-danger p-3">
+      <ol class="list-group list-group-numbered">
+        <li class="list-group-item d-flex justify-content-between align-items-start">
+          <div class="ms-2 me-auto text-dark">
+            <div class="fw-bold">Name:</div>
+            <%= product.name%>
+          </div>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-start">
+          <div class="ms-2 me-auto">
+            <div class="fw-bold">Description:</div>
+            <%= product.description%>
+          </div>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-start">
+          <div class="ms-2 me-auto">
+            <div class="fw-bold mb-2">Price:</div>
+           <span class="bg-success fw-bold p-1 rounded-pill">PKR  :  <%= product.price%> </span>
+          </div>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-start">
+          <div class="ms-2 me-auto">
+            <div class="fw-bold mb-2">Stock:</div>
+            <%= product.status%>
+          </div>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-start">
+          <div class="ms-2 me-auto">
+            <div class="fw-bold mb-2">Stock-Status:</div>
+            <%= product.stockStatus%>
+          </div>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-start">
+          <div class="ms-2 me-auto">
+            <div class="fw-bold mb-2">Brand:</div>
+            <%= product.brand%>
+          </div>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-start">
+          <div class="ms-2 me-auto">
+            <div class="fw-bold mb-2">featured:</div>
+            <%=product.featured=='featured' ? 'featured' : 'N/A' %>
+          </div>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-start">
+          <div class="ms-2 me-auto">
+            <div class="fw-bold mb-2">Categories:</div>
+            <%= pcat%>
+          </div>
+        </li>
+      </ol>
+    </div>
+
+ 
+    <div class="col-md-6 border">
+      <h4>Images:</h4>
+      <div class="row">
+        <%image.forEach(img=>{%>
+          <div class="col-md-4 p-2 border text-center">
+        <img src="/productimages/<%=img.image%>" alt="" class="image-fluid " height="100px">
+      </div>
+        <%})%>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row d-flex">
+    <div class="col-md-12 text-center mt-3 mb-5">
+      <a href="/product-delete/<%=product._id%>" class="btn bg-danger align-items-end w-50 mb-1">Delete</a>
+      <a href="/product-edit/<%= product._id%>" class="btn bg-primary align-items-end w-50">Edit</a>
+    </div>
+  </div>
+</div>
+    
+  
+    <!--/ form -->
+  </div>
+  <!-- /.content-wrapper -->
+  <!-- Control Sidebar -->
+  <aside class="control-sidebar control-sidebar-dark">
+    <!-- Control sidebar content goes here -->
+  </aside>
+  <!-- /.control-sidebar -->
+</div>
+<!-- ./wrapper -->
+
+</body>
+</html>

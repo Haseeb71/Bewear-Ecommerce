@@ -1,0 +1,165 @@
+/*===================================================================================*/
+/*	PAGE : About
+/*===================================================================================*/
+
+// About Features
+.about-features {
+	padding-top: 65px;
+	padding-bottom: 90px;
+
+	header{
+		padding-bottom: 60px;
+	}
+
+	.feature-title{
+		font-size: 14px;
+		font-weight: @opensans-bold;
+		line-height: 19px;
+		letter-spacing: 0.09em;
+		color: #000;
+		text-transform: uppercase;
+		margin: 30px 0;
+	}
+
+	.feature-description{
+		p{
+			&:last-child{
+				margin-bottom: 0;
+			}
+		}
+	}
+}
+
+// The Process
+.the-process {
+	
+	.process-container{
+		padding-top: 64px;
+		padding-bottom: 40px;
+	}
+	
+	.section-title {
+		font-size: 21px;
+		line-height: 19px;
+		font-weight: @opensans-bold !important;
+		letter-spacing: 0.05em;
+		text-transform: uppercase;
+	}
+
+	.first-column {
+		padding-right: 0;
+		padding-left: 4px;
+	}
+
+	.second-column {
+		padding-left: 0;
+	}
+}
+
+//Our Team
+.our-team{
+	border-top: 1px solid #eee;
+	border-bottom: 1px solid #eee;
+	padding-bottom: 90px;
+	padding-top: 68px;
+
+	.container{
+		padding-left: 5px;
+		padding-right: 5px;
+	}
+
+	figure{
+		position: relative;
+
+		figcaption{
+			position: absolute;
+			display: none;
+			width: 100%;
+			height: 100%;
+			text-align: center;
+			top: 0;
+			padding: 40px 20px;
+		}
+
+		&:hover{
+			figcaption{
+				display: block;
+				background-color: #e6e6e6;
+				opacity: 0.8;
+			}
+		}
+	}
+
+	.team-members{
+		padding-top: 65px;
+
+		&.row{
+			margin-right: -20px;
+			margin-left: -20px;
+		}
+	}
+
+	.team-member-name{
+		display: block;
+		font-size: 18px;
+		line-height: 21px;
+		font-weight: @opensans-bold;
+		color: #000;
+		text-transform: uppercase;
+		margin-bottom: 20px;
+	}
+
+	.team-member-designation{
+		display: block;
+		font-size: 12px;
+		line-height: 16.45px;
+		font-weight: @opensans-normal;
+		color: #000;
+		text-transform: uppercase;
+		margin-bottom: 40px;
+	}
+
+	.team-member-readmore{
+		display: block;
+
+		> a{
+			font-weight: @opensans-semibold;
+			font-size: 12px;
+			line-height: 20.57px;
+			text-transform: uppercase;
+			color: #000;
+			text-decoration: underline;
+		}
+	}
+}
+
+//Our Clients
+.our-clients{
+	padding-top: 75px;
+	padding-bottom: 110px;
+
+	header{
+		padding-bottom: 70px;
+	}
+
+	.brands-container{
+		display: table;
+		width: 100%;
+	}
+
+	.brands{
+		display: table-row;
+		
+		> li {
+			display: table-cell;
+			width: 20%;
+			text-align: center;
+			border-right: 1px solid #e6e6e6;
+			padding: 45px 0;
+
+			&:last-child{
+				border-right: none;
+			}
+		}
+	}
+}

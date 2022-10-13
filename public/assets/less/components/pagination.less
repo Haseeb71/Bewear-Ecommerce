@@ -1,0 +1,65 @@
+// COMPONENTS : PAGINATION
+
+.pagination-holder{
+	 padding-top: 35px;
+	  padding-bottom: 25px;
+	.prev,
+	.next{
+
+		color: #0c0d0d;
+		font-size: 13px;
+		line-height: 21px;/*24px;*/
+		margin-right: 10px;
+		display: block;
+		letter-spacing: 0.01em;
+		&:hover,
+		&:focus{
+			color: #000;
+		}
+	}
+	.prev{
+		.icon-prev{
+			margin-right: 12px;
+			float: left;
+			font-size: 24px;
+		}
+	}
+	.next{
+		float:right;
+		.icon-next{
+			margin-left: 12px;
+			float: right;
+			font-size: 24px;
+		}
+	}
+
+	.pagination{
+		display: inline-block;
+		margin: 0px;
+		> li{
+
+			> a{
+				border: none;
+				color: #797979;
+				font-size: 14px;
+				line-height: 24px;
+				margin-right: 10px;
+				display: block;
+				padding: 0 12px;
+				&:hover,
+				&:focus{
+					color: #484848;
+					text-decoration: underline;
+					background: rgba(0,0,0,0);
+				}
+			}
+			&.active{
+				> a{
+					color: #484848;
+					text-decoration: underline;
+					background: rgba(0,0,0,0) !important;
+				}
+			}
+		}
+	}
+}

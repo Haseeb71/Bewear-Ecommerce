@@ -1,0 +1,39 @@
+// COMPONENTS : STAR RATING
+
+.star-rating{
+    font-family: bewear;
+    font-size: 1.6em;/*1.4em;*/
+    font-weight: 400;
+    height: 1em;
+    line-height: 1em;
+    overflow: hidden;
+    position: relative;
+    width: 5em;/* 4.64em;*/
+    display:inline-block;
+    top:3px;
+        &:before{      
+            color: #ffd800;
+            content: "j" "j" "j" "j" "k";
+            float: left;
+            left: 0;
+            position: absolute;
+            top: 0;
+        }
+
+    span{
+        float: left;
+        left: 0;
+        overflow: hidden;
+        padding-top: 1.618em;
+        position: absolute;
+        top: 0;
+        color: #ffd800;
+        &:before{
+             /*color: #639AAA !important;*/
+            content: "j" "j" "j" "j" "k";
+            left: 0;
+            position: absolute;
+            top: 0;
+        }
+    }
+}

@@ -1,0 +1,116 @@
+/*===================================================================================*/
+/*  PAGE : LOOKBOOK
+/*===================================================================================*/
+
+.lookbook-styles{
+    padding-top: 50px;
+    padding-bottom: 89px;
+
+    .section-title{
+        font-size: 24px;
+        font-weight: @opensans-bold !important;
+        letter-spacing: 0.2em;
+        color: #5a5a5a;
+        padding-top: 25px;
+        padding-bottom: 12px;
+        text-align: center;
+        text-transform: uppercase;
+    }
+  
+}
+
+
+.lookbook-slider{
+    padding-top: 30px;
+
+    .owl-stage-outer{
+        border-bottom: 1px solid #eeeeee;
+    }
+
+    .single-look{
+        display: block;
+        color: #666;
+        display: block;
+        text-align: center;
+        opacity: 0.6;
+
+        &:hover, &:focus{
+            opacity: 1;
+            color: #000;
+
+            .shop-this-look{
+                text-decoration: underline;
+            }
+        }
+        
+        .shop-this-look{
+            font-size: 14px;
+            font-weight: @opensans-normal;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            padding-top: 25px;
+            padding-bottom: 25px;
+            margin-bottom: 0px;
+            display: block;
+            text-decoration: none;
+        }
+    }
+
+    .owl-controls{
+        .owl-dots{
+            .owl-dot{
+                span{
+                    margin: 0 15px 0 0;
+                }
+            }
+        }
+    }
+}
+
+.style-navigator-section{
+    .lookbook-slider{
+        .owl-stage-outer{
+            border-bottom: none;
+        }
+    }
+}
+
+
+.lookbook-styles2{
+    padding-bottom: 89px;
+    padding-top: 50px;
+    border-top: 1px solid #eee;
+
+    .style-2{
+        .section-title{
+            font-weight: @opensans-normal !important;
+            letter-spacing: 0.05em;
+            color: #9d9d9d;
+            text-align: center;
+            text-transform: uppercase;
+        }
+    }
+
+    .style-navigator-section{
+        border-bottom: 1px solid #eeeeee;
+         margin-bottom: 40px;
+
+        .lookbook-slider{
+            .lookbook-style{
+                border-bottom: none;
+                
+                .shop-this-look{
+                    font-size: 12px;                    
+                    padding-bottom: 30px;
+                   
+                }
+            }
+            .owl-controls{
+                position: relative;
+                top: 62px;
+                margin-top: -30px;
+                
+            }
+        }        
+    }
+}

@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+	<div class="wrapper">
+
+		<div class="main-content home-2 ">
+
+			<!-- ============================================================= SECTION – HERO ============================================================= -->
+
+			<section id="hero" class="home-2-slider wow fadeIn">
+				<div id="owl-main" class="owl-carousel">
+
+					<div class="item" style="background-image: url(/productImages/he1.jpg);">
+						<div class="container">
+							<div class="caption vertical-center text-left">
+
+								<h1 class="fadeInDown-1 title"><span class="first-letter">J</span>anuary Looks</h1>
+								<p class="fadeInDown-2 tagline">New Collection</p>
+								<div class="fadeInDown-3">
+									<a href="/all-categories" class="btn btn-default btn-block view-look-button">View
+										LookBook</a>
+								</div><!-- /.fadeIn -->
+
+							</div><!-- /.caption -->
+						</div><!-- /.container -->
+					</div><!-- /.item -->
+
+					<div class="item" style="background-image: url(/productImages/h2.jpg);">
+						<div class="container">
+							<div class="caption vertical-center text-left">
+
+								<h1 class="fadeInDown-1 title"><span class="first-letter">J</span>anuary Looks</h1>
+								<p class="fadeInDown-2 tagline">New Collection</p>
+								<div class="fadeInDown-3">
+									<a href="/all-categories" class="btn btn-default btn-block view-look-button">View
+										LookBook</a>
+								</div><!-- /.fadeIn -->
+
+							</div><!-- /.caption -->
+						</div><!-- /.container -->
+					</div><!-- /.item -->
+
+					<div class="item" style="background-image: url(/productImages/h3.jpg);">
+						<div class="container">
+							<div class="caption vertical-center text-left">
+
+								<h1 class="fadeInDown-1 title"><span class="first-letter">J</span>anuary Looks</h1>
+								<p class="fadeInDown-2 tagline">New Collection</p>
+								<div class="fadeInDown-3">
+									<a href="lookbook-2.html" class="btn btn-default btn-block view-look-button">View
+										LookBook</a>
+								</div><!-- /.fadeIn -->
+
+							</div><!-- /.caption -->
+						</div><!-- /.container -->
+					</div><!-- /.item -->
+
+					<div class="item" style="background-image: url(/productImages/h4.jpg);">
+						<div class="container">
+							<div class="caption vertical-center text-left">
+
+								<h1 class="fadeInDown-1 title"><span class="first-letter">J</span>anuary Looks</h1>
+								<p class="fadeInDown-2 tagline">New Collection</p>
+								<div class="fadeInDown-3">
+									<a href="lookbook-2.html" class="btn btn-default btn-block view-look-button">View
+										LookBook</a>
+								</div><!-- /.fadeIn -->
+
+							</div><!-- /.caption -->
+						</div><!-- /.container -->
+					</div><!-- /.item -->
+
+				</div><!-- /.owl-carousel -->
+			</section>
+
+			<!-- ============================================================= SECTION – HERO : END ============================================================= -->
+
+			<div class="container">
+				<section class="home-2-features inner-top-xs">
+					<div class="row">
+						<div class="col-md-6 col-sm-12  feature-block">
+							<a href="categories-grid.html" class="media features">
+								<div class="media-left">
+									<div class="image">
+										<img width="300" height="300" class="lazy-load media-object img-responsive"
+											src="/productImages/kid1.jpg"
+											data-echo="/productImages/kid1.jpg" alt="">
+									</div>
+								</div>
+								<div class="media-body media-middle">
+									<div class="section text-center">
+										<h5 class="name">john williams</h5>
+										<h3 class="tagline">perfection</h3>
+									</div>
+								</div>
+							</a><!-- /.media -->
+
+							<a href="categories-grid.html" class="media features">
+								<div class="media-body media-middle">
+									<div class="section text-center">
+										<h5 class="name">sunglasses</h5>
+										<h3 class="tagline">summer 2015</h3>
+									</div>
+								</div>
+								<div class="media-right">
+									<div class="image">
+										<img width="300" height="300" class="lazy-load media-object img-responsive"
+											src="/productImages/men1.jpg"
+											data-echo="/productImages/men1.jpg" alt="">
+									</div>
+								</div>
+							</a><!-- /.media -->
+						</div><!-- /.feature-block -->
+
+						<div class="col-md-6 col-sm-12 feature-block big-image hidden-sm">
+							<a href="/all-categories">
+								<img width="570" height="600" class="img-responsive lazy-load"
+									src="/productImages/cat.jpg" data-echo="/productImages/cat.jpg"
+									alt="">
+								<div class="centered-caption">
+									<div class="banner-text text-center">
+										<h4 class="banner-title">clothing</h4>
+										<h2 class="tagline">Categories</h2>
+									</div>
+								</div>
+							</a>
+						</div><!-- /.feature-block -->
+					</div><!-- /.row -->
+				</section><!-- /.home-2-features -->
+
+				<div class="product-tab-ver2">
+					<div role="tabpanel">
+						<!-- Nav tabs -->
+						<div class="tab-nav-holder">
+							<ul class="nav nav-tabs uppercase" role="tablist">
+								<li role="presentation" class="active"><a href="#just-arrived"
+										aria-controls="just-arrived" role="tab" data-toggle="tab">FEATURED</a></li>											
+							</ul>
+							<!--nav-tabs-->
+						</div>
+						<!--tab-nav-holder-->
+
+						<!-- Tab panes -->
+						<div class="tab-content inner-top-xs">
+							<div role="tabpanel" class="tab-pane active" id="just-arrived">
+								<div class="row grid-view">
+									<%let i = 0;%>	
+									<%featured.forEach(f=>{%>
+									<div class="col-md-4 col-sm-6 col-lg-3 col-xs-12 product-holder">
+										<div class="product">
+											<div class="image">													
+											<% if(images[i].productId == f._id){%>
+												<a href="/product/<%=f.slug%>"><img class="img-responsive" width="258"
+														src="/productImages/<%=images[i].image%>" alt="product image" height="200px"/></a>
+														<%}%>
+											</div><!-- .image -->
+											<div class="product-info m-t-20 text-center">
+												<a class="quick-view uppercase" data-toggle="modal"
+													data-target=".<%=f._id%>"><i
+														class="icon icon-more-colors-product"></i> Quick view</a>
+												<ul class="color-picker clearfix">
+													<li class="selected"><input checked="checked"
+															class="le-radio group black" type="radio" value="g1-0"
+															name="rgroup-0"></li>
+													<li><input class="le-radio group gray" type="radio" value="g1-1"
+															name="rgroup-0"></li>
+													<li><input class="le-radio group brown" type="radio" value="g1-2"
+															name="rgroup-0"></li>
+												</ul><!-- .color-picker -->
+												<h5 class="name uppercase"><a href="/product/<%=f.slug%>"><%=f.name%>
+														</a></h5>
+												<div class="product-price">
+													<ins><span class="amount">PKR <%=f.price%></span></ins>
+												</div><!-- .product-price -->
+												<div class="buttons-holder m-t-20">
+													<div class="add-cart-holder">
+														<a title="Add to cart" href="/add-to-cart/<%=f._id%>"
+														 	data-id="<%=f._id%>" onclick="cart()" class="cart-button btn btn-primary addCart">
+															<span>Add to bag</span>
+														</a>
+													</div><!-- .add-cart-holder -->
+													<div class="add-wishlist-holder">
+														<a href="checkout.html" title="Wishlist"
+															class="wishlist-button uppercase">
+															<span class="icon icon-wishlist"></span> add to wishlist
+														</a>
+													</div><!-- .add-wishlist-holder -->
+												</div><!-- .buttons-holder -->
+											</div><!-- .product-info -->
+										</div>
+									</div>
+
+									   <!-- Modal -->
+									   <div class="modal fade <%=f._id%> quick-modal" tabindex="-1" role="dialog"
+										aria-hidden="true">
+										<div class="modal-dialog">
+											<div class="modal-content">
+												<div class="modal-body">
+													<div class="row single-product-row">
+														<div class="col-sm-6 col-lg-6 col-xs-12 gallery-holder">
+															<div class="product-image-slider">
+																<div class="image">
+																	<div class="item">
+																		<% if(images[i].productId==f._id){%>
+																			<img src="/productImages/<%=images[i].image%>"
+																				width="500"
+																				data-echo="/productImages/<%=images[i].image%>"
+																				alt="" />
+																	</div>
+																	<%}%>
+																</div>
+															</div>
+														</div>
+
+														<div class="col-sm-6 col-lg-6 col-xs-12 body-holder">
+															<div class="product-info">
+																<div class="product-rating-holder">
+																	<a href="#" class="product-rating">
+																		<div class="star-rating gray"
+																			title="Rated 5.00 out of 5">
+																			<span style="width:80%">
+																				<strong class="rating">5.00</strong>
+																				out of 5
+																			</span>
+																		</div>
+																	</a>
+																	<a href="#reviews" class="review-link">(4
+																		reviews)</a>
+																</div>
+
+																<h1 class="single-product-title">
+																	<%=f.name%>
+																</h1>
+																<div class="product-brand">
+																	<%=f.brand%>
+																</div>
+																<div class="product-price">
+																	<ins><span class="amount">PKR <%=f.price%>
+																		</span></ins>
+																</div>
+
+																<div class="qnt-holder">
+																	<form class="cart">
+																		<div class="quantity-holder">
+																			<span class="key">Qty:</span>
+																			<input type="number" class="txt txt-qty"
+																				title="Qty" value="1"
+																				name="quantity" min="1" step="1">
+																		</div>
+
+																		<button type="submit"
+																				class="btn btn-primary single-add-cart-button addCart"  href="/add-to-cart/<%=f._id%>"
+																				data-id="<%=f._id%>"  data-dismiss="modal">Add
+																				to
+																				bag</button>
+
+																		<a href="#" title="Wishlist"
+																			class="btn add-to-wishlist"></a>
+																	</form>
+																</div>
+
+																<div id="product-simple-tab1" class="hidden-sm">
+																	<div class="tabs">
+																		<ul class="nav nav-tabs nav-tab-cells">
+																			<li class="active"><a data-toggle="tab"
+																					href="#modal-description">Description</a>
+																			</li>
+																			<li><a data-toggle="tab"
+																					href="#modal-info">Sizing</a>
+																			</li>
+																			<li><a data-toggle="tab"
+																					href="#modal-reviews">Reviews
+																					(4)</a></li>
+																		</ul>
+
+																		<div class="tab-content bewear-tab-content">
+																			<div id="modal-description"
+																				class="tab-pane fade in active">
+																				<p class="text">
+																					Sed quis nunc efficitur, gravida
+																					orci sed, gravida felis.
+																					Quisque non euismod felis.
+																					Suspendisse consectetur, tellus
+																					in
+																					condimentum fringilla.</p>
+																				<ul>
+																					<li>- 98% Cotton, 2% Elastane
+																					</li>
+																					<li>- Zip fly and button
+																						fastening</li>
+
+																				</ul>
+																			</div>
+																			<div id="modal-info"
+																				class="tab-pane fade">
+																				<ul class="tabled-data">
+																					<li>
+																						<label>weight</label>
+																						<div class="value">7.25 kg
+																						</div>
+																					</li>
+																					<li>
+																						<label>dimensions</label>
+																						<div class="value">90x60x90
+																							cm</div>
+																					</li>
+																					<li>
+																						<label>size</label>
+																						<div class="value">one size
+																							fits all</div>
+																					</li>
+																					<li>
+																						<label>color</label>
+																						<div class="value">white
+																						</div>
+																					</li>
+																					<li>
+																						<label>guarantee</label>
+																						<div class="value">5 years
+																						</div>
+																					</li>
+																				</ul>
+																			</div>
+																			<div id="modal-reviews"
+																				class="tab-pane fade">
+																				<article class="review">
+																					<div class="header">
+																						<div class="star-rating gray"
+																							title="Rated 5.00 out of 5">
+																							<span style="width:80%">
+																								<strong
+																									class="rating">5.00</strong>
+																								out of 5
+																							</span>
+																						</div>
+																						<h4 class="author">Richard
+																							Doe</h4>
+																						<span class="date">Aug 7,
+																							2013</span>
+																					</div>
+																					<p class="text">
+																						Choupette Mulberry dark red
+																						lipstick crop button up
+																						chunky
+																						sole chambray shirt
+																						maxi skirt vintage Levi
+																						shorts. Loafers 90s collar
+																						indigo
+																						denim silver collar
+																						round sunglasses.
+																					</p>
+																				</article>
+
+
+																			</div>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+													<a class="remove-icon" data-dismiss="modal"
+														aria-label="Close"><span
+															class="icon icon-quickview-close"></span></a>
+												</div>
+											</div>
+										</div>
+									</div>
+									<%i++;})%>
+									
+								</div><!-- .row -->
+									
+							</div><!-- .tab-pane -->
+						<!--tab-pane-->
+						</div>
+						<!--tab-content-->
+					</div>
+					<!--tabpanel-->
+				</div>
+				<!--product-tab-ver2-->
+			</div><!-- /.container -->
+
+			<div class="load-more-holder text-center">
+				<a href="categories-grid.html" class="btn btn-default load-more">Load More Products</a>
+			</div>
+
+			<section class="wide-banners clearfix wow fadeIn">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-4 col-sm-4">
+							<div class="wide-banner cnt-strip">
+								<a href="catalog.html">
+									<div class="image lazy-load">
+										<img width="370" height="245" src="assets/images/blank.gif"
+											data-echo="assets/images/brands/w2.jpg" class="img-responsive" alt="">
+									</div>
+									<div class="strip text-center">
+										<h5>over 40s</h5>
+										<h3>free delivery</h3>
+									</div>
+								</a>
+							</div><!-- /.wide-banner-->
+						</div><!-- /.col -->
+
+						<div class="col-md-4 col-sm-4">
+							<div class="wide-banner cnt-strip">
+								<a href="catalog.html">
+									<div class="image lazy-load">
+										<img width="370" height="245" src="assets/images/blank.gif"
+											data-echo="assets/images/brands/w1.jpg" class="img-responsive" alt="">
+									</div>
+									<div class="strip text-center">
+										<div class="strip-inner">
+											<h5>get up to</h5>
+											<h1>40% off</h1>
+										</div>
+									</div>
+								</a>
+							</div><!-- /.wide-banner-->
+						</div><!-- /.col -->
+
+						<div class="col-md-4 col-sm-4">
+							<div class="wide-banner cnt-strip">
+								<a href="catalog.html">
+									<div class="image lazy-load">
+										<img width="370" height="245" src="assets/images/blank.gif"
+											data-echo="assets/images/brands/w3.jpg" class="img-responsive" alt="">
+									</div>
+									<div class="strip text-center">
+										<div class="strip-inner">
+											<h5>we care</h5>
+											<h3>world shipping</h3>
+										</div>
+									</div>
+								</a>
+							</div><!-- /.wide-banner-->
+						</div><!-- /.col -->
+					</div><!-- /.row -->
+				</div><!-- /.container -->
+			</section><!-- /.wide-banners -->
+			<section class="container subscription wow fadeIn">
+				<form class="form-inline form-subscribe text-center">
+					<span class="form-subtitle">Stay up to date</span>
+					<h3 class="form-title">Sign up for Newsletter</h3>
+					<div class="form-group">
+						<label for="email-subscribe" class="sr-only">Email</label>
+						<input type="email" class="form-control" id="email-subscribe"
+							placeholder="Enter your email address">
+						<button type="submit" class="btn btn-primary btn-subscribe">Subscribe</button>
+					</div>
+				</form><!-- /.form-subscribe -->
+			</section><!-- /.subscription -->
+		</div>
+		
+		<!-- Modal -->
+		<div class="modal fade bs-example-modal-lg quick-modal" tabindex="-1" role="dialog" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-body">
+						<div class="row single-product-row">
+							<div class="col-sm-6 col-lg-6 col-xs-12 gallery-holder">
+								<div class="product-image-slider">
+									<div class="quick-view-slider">
+										<div class="item">
+											<img src="assets/images/blank.gif"
+												data-echo="assets/images/products/quick-product.png" alt="" />
+										</div>
+										<div class="item">
+											<img src="assets/images/blank.gif"
+												data-echo="assets/images/products/quick-product.png" alt="" />
+										</div>
+										<div class="item">
+											<img src="assets/images/blank.gif"
+												data-echo="assets/images/products/quick-product.png" alt="" />
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="col-sm-6 col-lg-6 col-xs-12 body-holder">
+								<div class="product-info">
+									<div class="product-rating-holder">
+										<a href="#" class="product-rating">
+											<div class="star-rating gray" title="Rated 5.00 out of 5">
+												<span style="width:80%">
+													<strong class="rating">5.00</strong>
+													out of 5
+												</span>
+											</div>
+										</a>
+										<a href="#reviews" class="review-link">(4 reviews)</a>
+									</div>
+
+									<h1 class="single-product-title">Converse Chuck Taylor</h1>
+									<div class="product-brand">Calvin Klein</div>
+									<div class="product-price">
+										<ins><span class="amount">$492.00</span></ins>
+									</div>
+
+									<div class="product-attributes">
+										<div class="color-holder clearfix">
+											<span class="key">Color:</span> <span class="value">Black Native</span>
+											<ul class="color-picker clearfix">
+												<li><input class="le-radio blue checked" type="radio" value="color1"
+														name="main" checked="checked">
+												</li>
+												<li><input class="le-radio gray" type="radio" value="color2"
+														name="main">
+												</li>
+												<li><input class="le-radio red" type="radio" value="color3" name="main">
+												</li>
+												<li><input class="le-radio green" type="radio" value="color4"
+														name="main">
+												</li>
+												<li><input class="le-radio" type="radio" value="color5" name="main">
+												</li>
+											</ul>
+										</div>
+
+										<div class="size-holder m-t-20 clearfix">
+											<span class="key">size:</span>
+											<ul class="size-picker clearfix">
+												<li><input id="group1-1" class="attribute-radio" type="radio"
+														value="color1" name="group">
+													<label for="group1-1"><span>7</span></label>
+												</li>
+												<li><input id="group2-1" class="attribute-radio" type="radio"
+														value="color2" name="group">
+													<label for="group2-1"><span>8</span></label>
+												</li>
+												<li><input id="group3-1" class="attribute-radio" type="radio"
+														value="color3" name="group">
+													<label for="group3-1"><span>8.5</span></label>
+												</li>
+												<li><input id="group4-1" class="attribute-radio" type="radio"
+														value="color4" name="group">
+													<label for="group4-1"><span>9</span></label>
+												</li>
+												<li><input id="group5-1" class="attribute-radio" type="radio"
+														value="color5" name="group">
+													<label for="group5-1"><span>9.5</span></label>
+												</li>
+												<li><input id="group6-1" class="attribute-radio" type="radio"
+														value="color6" name="group">
+													<label for="group6-1"><span>10</span></label>
+												</li>
+												<li><input id="group7-1" class="attribute-radio" type="radio"
+														value="color7" name="group">
+													<label for="group7-1"><span>11</span></label>
+												</li>
+												<li><input id="group8-1" class="attribute-radio" type="radio"
+														value="color8" name="group">
+													<label for="group8-1"><span>12.5</span></label>
+												</li>
+												<li><input id="group9-1" class="attribute-radio" type="radio"
+														value="color9" name="group">
+													<label for="group9-1"><span>13</span></label>
+												</li>
+												<li><input id="group10-1" class="attribute-radio" type="radio"
+														value="color10" name="group">
+													<label for="group10-1"><span>13.5</span></label>
+												</li>
+											</ul>
+										</div>
+
+									</div>
+
+									<div class="qnt-holder">
+										<form class="cart">
+											<div class="quantity-holder">
+												<span class="key">Qty:</span>
+												<input type="number" class="txt txt-qty" title="Qty" value="1"
+													name="quantity" min="1" step="1">
+											</div>
+
+											<button type="submit" class="btn btn-primary single-add-cart-button">Add to
+												bag</button>
+
+											<a href="#" title="Wishlist" class="btn add-to-wishlist"></a>
+
+										</form>
+									</div>
+
+									<div id="product-simple-tab1" class="hidden-sm">
+										<div class="tabs">
+											<ul class="nav nav-tabs nav-tab-cells">
+												<li class="active"><a data-toggle="tab"
+														href="#modal-description">Description</a></li>
+												<li><a data-toggle="tab" href="#modal-info">Sizing</a></li>
+												<li><a data-toggle="tab" href="#modal-reviews">Reviews (4)</a></li>
+											</ul>
+
+											<div class="tab-content bewear-tab-content">
+												<div id="modal-description" class="tab-pane fade in active">
+													<p class="text">
+														Sed quis nunc efficitur, gravida orci sed, gravida felis.
+														Quisque non euismod felis. Suspendisse consectetur, tellus in
+														condimentum fringilla.</p>
+													<ul>
+														<li>- 98% Cotton, 2% Elastane</li>
+														<li>- Zip fly and button fastening</li>
+
+													</ul>
+												</div>
+												<div id="modal-info" class="tab-pane fade">
+													<ul class="tabled-data">
+														<li>
+															<label>weight</label>
+															<div class="value">7.25 kg</div>
+														</li>
+														<li>
+															<label>dimensions</label>
+															<div class="value">90x60x90 cm</div>
+														</li>
+														<li>
+															<label>size</label>
+															<div class="value">one size fits all</div>
+														</li>
+														<li>
+															<label>color</label>
+															<div class="value">white</div>
+														</li>
+														<li>
+															<label>guarantee</label>
+															<div class="value">5 years</div>
+														</li>
+													</ul>
+												</div>
+												<div id="modal-reviews" class="tab-pane fade">
+													<article class="review">
+														<div class="header">
+															<div class="star-rating gray" title="Rated 5.00 out of 5">
+																<span style="width:80%">
+																	<strong class="rating">5.00</strong>
+																	out of 5
+																</span>
+															</div>
+															<h4 class="author">Richard Doe</h4>
+															<span class="date">Aug 7, 2013</span>
+														</div>
+														<p class="text">
+															Choupette Mulberry dark red lipstick crop button up chunky
+															sole chambray shirt
+															maxi skirt vintage Levi shorts. Loafers 90s collar indigo
+															denim silver collar
+															round sunglasses.
+														</p>
+													</article>
+
+
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<a class="remove-icon" data-dismiss="modal" aria-label="Close"><span
+								class="icon icon-quickview-close"></span></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- /.wrapper -->
+
+	
+

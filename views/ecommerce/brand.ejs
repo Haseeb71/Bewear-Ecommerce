@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<body>
+	<div class="wrapper">
+
+		<main>
+			<section class="catalog-header">
+				<header>
+					<h1 class="catalog-title uppercase">
+						<%=title%>
+					</h1>
+					<span class="catalog-subtitle">Stand out from the rest in the perfect
+						clothes</span>
+				</header>
+			</section><!-- /.catalog-header -->
+
+			<div class="catalog-content">
+				<div class="container">
+					<!--<div class="right-sidebar">
+				<div class="free-shipping-ad">Free Standard Shipping <br>at $75</div>
+			</div>-->
+
+					<div class="row row-no-margin">
+
+
+						<div class="col-md-9 col-sm-10">
+							<div class="control-bar">
+								<ul class="breadcrumb">
+									<li><a href="/">Home</a></li>
+									<li><a href="">Men</a></li>
+									<li class="active">New Arrivals</li>
+								</ul><!-- /.breacrumb -->
+								<ul class="listing-options">
+									<li class="sort-by">
+										<label for="sort-by">Sort by:</label>
+										<select id="sort-by">
+											<option value="">Newest</option>
+											<option value="aye">Aye</option>
+											<option value="eh">Eh</option>
+											<option value="ooh">Ooh</option>
+											<option value="whoop">Whoop</option>
+										</select>
+									</li><!-- /.sort-by -->
+									<li class="show-count">
+										<select id="no-of-items">
+											<option value="60">60</option>
+											<option value="100">100</option>
+										</select>
+									</li><!-- /.show-count -->
+								</ul><!-- /.listing-options -->
+							</div><!-- /.control-bar -->
+							<div class="catalog-products clearfix">
+								<%let i=0;%>
+									<% brandproducts.forEach(pro=>{%>
+										<div class='col-md-6 col-sm-6 col-lg-4 col-xs-12 product-holder'>
+											<div class="product">
+												<div class="image">
+													<% if(images[i].productId==pro._id){%>
+														<a href="/product/<%=pro.slug%>"><img class="img-responsive"
+																width="258" src="/productImages/<%=images[i].image%>"
+																alt="product image" height="200px" /></a>
+														<%}%>
+
+												</div><!-- .image -->
+												<div class="product-info m-t-20 text-center">
+													<a class="quick-view uppercase" data-toggle="modal"
+														data-target=".<%=pro.slug%>"><i
+															class="icon icon-more-colors-product"></i> Quick view</a>
+													<ul class="color-picker clearfix">
+														<li class="selected"><input class="le-radio group gray"
+																type="radio" value="g1" checked="checked" name="c1">
+														</li>
+														<li><input class="le-radio black" type="radio" value="g1-2"
+																name="c1">
+														</li>
+													</ul><!-- .color-picker -->
+													<h5 class="name uppercase"><a href="/product/<%=pro.slug%>">
+															<%=pro.name%>
+														</a></h5>
+													<div class="product-price">
+														<ins><span class="amount">PKR <%=pro.price%></span></ins>
+													</div><!-- .product-price -->
+													<div class="buttons-holder m-t-20">
+														<div class="add-cart-holder">
+															<a title="Add to cart" href="/add-to-cart/<%=pro._id%>"
+																data-id="<%=pro._id%>"
+																class="cart-button btn btn-primary addCart">
+																<span>Add to bag</span>
+															</a>
+
+														</div><!-- .add-cart-holder -->
+
+														<div class="add-wishlist-holder">
+
+															<a href="checkout.html" title="Wishlist"
+																class="wishlist-button uppercase">
+																<span class="icon icon-wishlist"></span> add to wishlist
+															</a>
+														</div><!-- .add-wishlist-holder -->
+													</div><!-- .buttons-holder -->
+												</div><!-- .product-info -->
+											</div>
+										</div>
+
+
+										<!-- Modal -->
+										<div class="modal fade <%=pro.slug%> quick-modal" tabindex="-1" role="dialog"
+											aria-hidden="true">
+											<div class="modal-dialog">
+												<div class="modal-content">
+													<div class="modal-body">
+														<div class="row single-product-row">
+															<div class="col-sm-6 col-lg-6 col-xs-12 gallery-holder">
+																<div class="product-image-slider">
+																	<div class="image">
+																		<div class="item">
+																			<% if(images[i].productId==pro._id){%>
+																				<img src="/productImages/<%=images[i].image%>"
+																					width="500"
+																					data-echo="/productImages/<%=images[i].image%>"
+																					alt="" />
+																		</div>
+																		<%}%>
+																	</div>
+																</div>
+															</div>
+
+															<div class="col-sm-6 col-lg-6 col-xs-12 body-holder">
+																<div class="product-info">
+																	<div class="product-rating-holder">
+																		<a href="#" class="product-rating">
+																			<div class="star-rating gray"
+																				title="Rated 5.00 out of 5">
+																				<span style="width:80%">
+																					<strong class="rating">5.00</strong>
+																					out of 5
+																				</span>
+																			</div>
+																		</a>
+																		<a href="#reviews" class="review-link">(4
+																			reviews)</a>
+																	</div>
+
+																	<h1 class="single-product-title">
+																		<%=pro.name%>
+																	</h1>
+																	<div class="product-brand">
+																		<%=pro.brand%>
+																	</div>
+																	<div class="product-price">
+																		<ins><span class="amount">PKR <%=pro.price%>
+																			</span></ins>
+																	</div>
+
+
+																	<div class="qnt-holder">
+																		<form class="cart">
+																			<div class="quantity-holder">
+																				<span class="key">Qty:</span>
+																				<input type="number" class="txt txt-qty"
+																					title="Qty" value="1"
+																					name="quantity" min="1" step="1">
+																			</div>
+
+																			<button type="submit"
+																				class="btn btn-primary single-add-cart-button addCart"  href="/add-to-cart/<%=pro._id%>"
+																				data-id="<%=pro._id%>"  data-dismiss="modal">Add
+																				to
+																				bag</button>
+
+																			<a href="#" title="Wishlist"
+																				class="btn add-to-wishlist"></a>
+
+																		</form>
+																	</div>
+
+																	<div id="product-simple-tab1" class="hidden-sm">
+																		<div class="tabs">
+																			<ul class="nav nav-tabs nav-tab-cells">
+																				<li class="active"><a data-toggle="tab"
+																						href="#modal-description">Description</a>
+																				</li>
+																				<li><a data-toggle="tab"
+																						href="#modal-info">Sizing</a>
+																				</li>
+																				<li><a data-toggle="tab"
+																						href="#modal-reviews">Reviews
+																						(4)</a></li>
+																			</ul>
+
+																			<div class="tab-content bewear-tab-content">
+																				<div id="modal-description"
+																					class="tab-pane fade in active">
+																					<p class="text">
+																						Sed quis nunc efficitur, gravida
+																						orci sed, gravida felis.
+																						Quisque non euismod felis.
+																						Suspendisse consectetur, tellus
+																						in
+																						condimentum fringilla.</p>
+																					<ul>
+																						<li>- 98% Cotton, 2% Elastane
+																						</li>
+																						<li>- Zip fly and button
+																							fastening</li>
+
+																					</ul>
+																				</div>
+																				<div id="modal-info"
+																					class="tab-pane fade">
+																					<ul class="tabled-data">
+																						<li>
+																							<label>weight</label>
+																							<div class="value">7.25 kg
+																							</div>
+																						</li>
+																						<li>
+																							<label>dimensions</label>
+																							<div class="value">90x60x90
+																								cm</div>
+																						</li>
+																						<li>
+																							<label>size</label>
+																							<div class="value">one size
+																								fits all</div>
+																						</li>
+																						<li>
+																							<label>color</label>
+																							<div class="value">white
+																							</div>
+																						</li>
+																						<li>
+																							<label>guarantee</label>
+																							<div class="value">5 years
+																							</div>
+																						</li>
+																					</ul>
+																				</div>
+																				<div id="modal-reviews"
+																					class="tab-pane fade">
+																					<article class="review">
+																						<div class="header">
+																							<div class="star-rating gray"
+																								title="Rated 5.00 out of 5">
+																								<span style="width:80%">
+																									<strong
+																										class="rating">5.00</strong>
+																									out of 5
+																								</span>
+																							</div>
+																							<h4 class="author">Richard
+																								Doe</h4>
+																							<span class="date">Aug 7,
+																								2013</span>
+																						</div>
+																						<p class="text">
+																							Choupette Mulberry dark red
+																							lipstick crop button up
+																							chunky
+																							sole chambray shirt
+																							maxi skirt vintage Levi
+																							shorts. Loafers 90s collar
+																							indigo
+																							denim silver collar
+																							round sunglasses.
+																						</p>
+																					</article>
+
+
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+														<a class="remove-icon" data-dismiss="modal"
+															aria-label="Close"><span
+																class="icon icon-quickview-close"></span></a>
+													</div>
+												</div>
+											</div>
+										</div>
+										<%i++;})%>
+							</div>
+							<!-- /.catalog-products -->
+
+
+						</div>
+						<div class="col-md-3 col-sm-2">
+							<div class="right-sidebar">
+								<div class="sidebar">
+									<h5 class="sidebar-title uppercase">category</h5>
+									<div class="body">
+										<ul>
+											<%categories.forEach(cat=>{%>
+												<li><a href="/category/<%=cat.slug%>">
+														<%=cat.name%>
+													</a></li>
+												<%})%>
+										</ul>
+									</div><!-- /.body -->
+								</div><!-- /.sidebar -->
+								<div class="sidebar">
+									<h5 class="sidebar-title uppercase">brand</h5>
+									<div class="body">
+										<ul>
+											<%brands.forEach(b=>{%>
+												<li><a href="/brand/<%=b.slug%>">
+														<%=b.name%>
+													</a></li>
+												<%})%>
+										</ul>
+									</div><!-- /.body -->
+								</div><!-- /.sidebar -->
+								<div class="sidebar">
+									<h5 class="sidebar-title uppercase">filter</h5>
+									<div class="body">
+										<div class="accordion">
+											<div class="accordion-group">
+												<div class="accordion-heading">
+													<a href="#collapseOne" data-toggle="collapse"
+														class="accordion-toggle collapsed">
+														Price
+													</a>
+												</div><!-- /.accordion-heading -->
+												<div class="accordion-body collapse" id="collapseOne">
+													<div class="accordion-inner">
+														<div id="slider-range" class="m-t-20"></div>
+														<p class="slider-price-range"><input type="text" id="amount">
+														</p>
+													</div><!-- /.accordion-inner -->
+												</div><!-- /.accordion-body -->
+											</div><!-- /.accordion-group -->
+
+											<div class="accordion-group">
+												<div class="accordion-heading">
+													<a href="#collapseTwo" data-toggle="collapse"
+														class="accordion-toggle collapsed">
+														Color
+													</a>
+												</div><!-- /.accordion-heading -->
+												<div class="accordion-body collapse" id="collapseTwo">
+													<div class="accordion-inner">
+														<div class="color-holder clearfix">
+															<ul class="color-picker clearfix">
+																<li><input class="le-radio blue checked" type="radio"
+																		value="color1" name="sidebar" checked="checked">
+																</li>
+																<li><input class="le-radio gray" type="radio"
+																		value="color2" name="sidebar"></li>
+																<li><input class="le-radio red" type="radio"
+																		value="color3" name="sidebar"></li>
+																<li><input class="le-radio green" type="radio"
+																		value="color4" name="sidebar"></li>
+																<li><input class="le-radio" type="radio" value="color5"
+																		name="sidebar"></li>
+															</ul><!-- /.color-picker -->
+														</div><!-- /.color-holder -->
+													</div><!-- /.accordion-inner -->
+												</div><!-- /.accordion-body -->
+											</div><!-- /.accordion-group -->
+
+
+											<div class="accordion-group">
+												<div class="accordion-heading">
+													<a href="#collapse3" data-toggle="collapse"
+														class="accordion-toggle collapsed">
+														Size
+													</a>
+												</div><!-- /.accordion-heading -->
+												<div class="accordion-body collapse" id="collapse3">
+													<div class="accordion-inner">
+														<div class="size-holder clearfix">
+															<ul class="size-picker clearfix">
+																<li>
+																	<input id="group1" class="attribute-radio"
+																		type="radio" value="color1" name="group">
+																	<label for="group1"><span>7</span></label>
+																</li>
+																<li>
+																	<input id="group2" class="attribute-radio"
+																		type="radio" value="color2" name="group">
+																	<label for="group2"><span>8</span></label>
+																</li>
+																<li>
+																	<input id="group3" class="attribute-radio"
+																		type="radio" value="color3" name="group">
+																	<label for="group3"><span>8.5</span></label>
+																</li>
+																<li>
+																	<input id="group4" class="attribute-radio"
+																		type="radio" value="color4" name="group">
+																	<label for="group4"><span>9</span></label>
+																</li>
+																<li>
+																	<input id="group5" class="attribute-radio"
+																		type="radio" value="color5" name="group">
+																	<label for="group5"><span>9.5</span></label>
+																</li>
+																<li>
+																	<input id="group6" class="attribute-radio"
+																		type="radio" value="color6" name="group">
+																	<label for="group6"><span>10</span></label>
+																</li>
+															</ul><!-- /.size-picker -->
+														</div><!-- /.size-holder -->
+													</div>
+													<!--- /.accordion-inner -->
+												</div><!-- /.accordion-body -->
+
+											</div><!-- /.accordion-group -->
+										</div><!-- /.accordion -->
+									</div><!-- /.body -->
+								</div><!-- /.sidebar -->
+								<div class="free-shipping-ad">Free Standard Shipping <br>at $75</div>
+							</div><!-- /.right-sidebar -->
+						</div><!-- /.col -->
+
+					</div><!-- /.row -->
+
+				</div><!-- /.container -->
+			</div><!-- /.catalog-content -->
+			<div class="pagination-holder">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-4 col-sm-4">
+							<a href="#" class="prev"><i
+									class="icon icon-pagination-left icon-prev"></i><span>Previous</span></a>
+						</div><!-- /.col -->
+						<div class="col-md-4 col-sm-4 text-center">
+							<ul class="pagination">
+								<li><a href="#">1</a></li>
+								<li class='active'><a href="#">2</a></li>
+								<li><a href="#">3</a></li>
+								<li><a href="#">4</a></li>
+								<li><a href="#">5</a></li>
+							</ul><!-- /.pagination -->
+						</div><!-- /.col -->
+						<div class="col-md-4 col-sm-4">
+							<a href="#" class="next"><span>Next</span><i
+									class="icon icon-pagination-right icon-next"></i></a>
+						</div><!-- /.col -->
+					</div><!-- /.row -->
+				</div><!-- /.container -->
+			</div><!-- /.pagination-holder -->
+		</main><!-- /main -->
+
+	</div><!-- /.wrapper -->
+
+
+
+</body>
+
+</html>

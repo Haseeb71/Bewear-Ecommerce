@@ -1,0 +1,58 @@
+// COMPONENTS : OWL CAROUSEL
+
+.owl-controls{
+	margin-top: 23px;
+    text-align: center;
+	
+
+	.owl-dots{
+		.owl-dot{
+			display: inline-block;
+			span{
+				background: none repeat scroll 0 0 #c5c5c5;
+				border: medium none;
+				-webkit-border-radius: 50%;
+				-moz-border-radius: 50%;
+				border-radius: 50%;
+				display: block;
+				height: 10px;
+				margin: 0 15px 0 0px;
+				-webkit-transition: all 200ms ease-out 0s;
+				-moz-transition: all 200ms ease-out 0s;
+				-o-transition: all 200ms ease-out 0s;
+				transition: all 200ms ease-out 0s;
+				width: 10px;
+
+			}
+			&:hover,
+			&:focus,
+			&.active{
+				span{
+					background: none repeat scroll 0 0 #2a2a2a;
+				}
+			}
+		}
+	}
+	.owl-nav{
+		.owl-prev,
+		.owl-next{
+			position: absolute;
+			-webkit-transition: all 200ms ease-out;
+			-moz-transition: all 200ms ease-out;
+			-o-transition: all 200ms ease-out;
+			transition: all 200ms ease-out;
+			display: inline-block;
+			margin: auto;
+			top: 50%;
+			font-size: 20px;
+
+		}
+
+		.owl-prev{
+			left: 30px;
+		}
+		.owl-next{
+			right: 30px;
+		}
+	}
+}

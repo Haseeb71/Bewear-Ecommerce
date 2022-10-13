@@ -1,0 +1,126 @@
+/*===================================================================================*/
+/*  PAGE : LOOKBOOK 2
+/*===================================================================================*/
+
+.page-lookbook-2{
+	padding-bottom: 48px;
+    padding-top: 88px;
+
+    img{
+    	&:hover{
+    		opacity: 0.7;
+    	}
+    }
+}
+
+.look-style-2{
+	position: relative;
+	margin: 0 0 73px 0;
+
+	.look-info-holder{
+		position: relative;
+
+		.look-info{
+			position: absolute;
+			top: 0px;
+			text-transform: uppercase;
+			display: inline-block;
+			margin-bottom: 25px;
+			z-index: 9;
+
+			.look-number{
+				font-size: 36px;                
+				font-weight: @opensans-light;
+				letter-spacing: 0.1em;
+				color: #000;
+				line-height: 1;
+				margin-top: 0px;
+				margin-bottom: 18px;
+
+			}
+
+			.look-title{
+				font-size: 36px;                
+				font-weight: @opensans-bold;
+				letter-spacing: 0.15em;
+				color: #000;
+				line-height: 50px;
+				margin-top: 0;
+				margin-bottom: 25px;
+			}
+
+			.text{
+				font-size: 14px;                
+				font-weight: @opensans-normal;
+				letter-spacing:0.08em;
+				color: #000;
+				line-height: 17px;
+				margin-bottom: 35px;
+
+			}
+
+			.shop-now{
+				font-size: 16px;                
+				font-weight: @opensans-normal;
+				letter-spacing: 0.08em;
+				color: #000;
+				line-height: 30px;
+				display: block;
+				text-decoration: underline;
+			}
+
+			&.left-column{
+				left: 0px;
+				width: 183px;
+			}
+
+			&.right-column{
+				right: 0px;
+				width: 202px;
+			}
+		}
+	}
+
+	.media{
+		display: inline-block;
+
+		.media-left{
+			padding-right: 30px;
+		}
+
+		.media-right{
+			padding-left: 30px;
+		}
+	}
+
+	&.left{
+		.media{
+			float: right;
+		}
+
+		.look-info-holder{
+			.look-info{
+				width: 205px;
+			}
+		}
+	}
+	&.right{
+		.media{
+			float: left;
+		}
+		.look-info-holder{
+			.look-info{
+				width: 202px;
+				right: 0px;
+			}
+		}
+	}
+
+	&:first-child{
+		.look-info-holder{
+			.look-info{
+				top: 197px;
+			}
+		}
+	}     
+}

@@ -1,0 +1,101 @@
+/*===================================================================================*/
+/*  PAGE : CATALOG
+/*===================================================================================*/
+
+.catalog-content{
+  padding-bottom: 55px;
+  border-bottom:1px solid #eeeeee;
+  padding-top: 40px;
+
+    .right-sidebar{
+		//float: right;
+		//width: 23%;
+        //margin-bottom: 50px;
+
+    	.sidebar{
+    		margin-bottom: 20px;
+    		.sidebar-title{
+    			font-size: 14px;                
+				font-weight: @opensans-bold;
+				letter-spacing: 0.1em;
+				line-height: 36px;
+				color: @black-text;
+				 margin-bottom: 5px;
+    		}
+    		.body{
+    			ul{
+    				> li{
+    					> a{
+    						color: #797979;
+    						display: block;
+    						font-size: 14px;                
+							font-weight: @opensans-normal;
+							letter-spacing: 0.01em;
+							line-height: 24px;
+							&:hover,
+							&:focus{
+								color: @black-text;
+							}
+    					}
+    					&.highlight{
+    						> a{
+    							color: #c90000;
+    						}
+    					}
+    					&.bold{
+    						> a{
+    							font-weight: @opensans-bold;
+    							color: #0c0d0d;
+    						}
+    					}
+    				}
+    			}
+
+
+    			.accordion{
+    				.accordion-toggle{
+    					color: #797979;
+						display: block;
+						font-size: 14px;                
+						font-weight: @opensans-normal;
+						letter-spacing: 0.01em;
+						line-height: 24px;
+    					&:after{
+    						content: "y";
+						    float: right;
+						    font-family: bewear;
+						    color: #666666;
+						    font-size: 19px;
+    					}
+    					&.collapsed{
+    						&:after{
+    							color: #666666;
+                                font-size: 19px;
+                                content: "y";
+    						}
+    					}
+
+    				}
+    				.accordion-body{
+    					.accordion-inner{
+    						padding:20px 0px;
+    					}
+    				}
+    			}
+    		}
+    		&:first-child{
+    			.sidebar-title{
+    				margin-top: -5px;
+    			}
+    		}
+    	}
+
+    	.free-shipping-ad{
+    		font-size: 14px;                
+			font-weight: @opensans-bold;
+			letter-spacing: 0.01em;
+			line-height: 24px;
+			color: @black-text;
+    	}	    
+    }
+}

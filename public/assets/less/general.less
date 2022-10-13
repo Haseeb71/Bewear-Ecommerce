@@ -1,0 +1,307 @@
+/*===================================================================================*/
+/*	GENERAL
+/*===================================================================================*/
+
+body{
+	font-family: @content-font-family;
+	font-size: 14px;
+	color: #727272;
+	line-height: 24px;
+	letter-spacing: 0.01em;
+}
+
+.grid{
+	background: url('../images/grid.jpg') center;
+}
+
+.container{
+	padding-left: 0;
+	padding-right: 0;
+}
+
+h1, h2, h3, h4, h5, h6{
+	color: #000;
+}
+
+main header + * {
+	margin-top: 35px !important;
+}
+
+.inner {
+	padding-top: 120px;
+	padding-bottom: 120px;
+}
+
+.inner-md {
+	padding-top: 100px;
+	padding-bottom: 100px;
+}
+
+.inner-sm {
+	padding-top: 80px;
+	padding-bottom: 80px;
+}
+
+.inner-xs {
+	padding-top: 40px;
+	padding-bottom: 40px;
+}
+.inner-vs {
+	padding-top: 30px;
+	padding-bottom: 30px;
+}
+
+.inner-top {
+	padding-top: 120px;
+}
+
+.inner-top-md {
+	padding-top: 100px;
+}
+
+.inner-top-sm {
+	padding-top: 80px;
+}
+
+.m-t-20{
+  margin-top:20px;
+}
+.inner-top-50{
+	padding-top: 50px;
+}
+
+.inner-top-xs {
+	padding-top: 40px;
+}
+
+.inner-top-vs {
+  padding-top: 30px;
+}
+
+.inner-bottom {
+	padding-bottom: 120px;
+}
+
+.inner-bottom-md {
+	padding-bottom: 100px;
+}
+
+.inner-bottom-sm {
+	padding-bottom: 80px;
+}
+.inner-bottom-50{
+	padding-bottom: 50px;
+}
+
+.inner-bottom-xs {
+	padding-bottom: 40px;
+}
+
+.inner-bottom-vs{
+	padding-bottom: 30px;
+}
+
+.inner-left {
+	padding-left: 75px;
+}
+
+.inner-left-md {
+	padding-left: 60px;
+}
+
+.inner-left-sm {
+	padding-left: 45px;
+}
+
+.inner-left-xs {
+	padding-left: 30px;
+}
+
+.inner-right {
+	padding-right: 75px;
+}
+
+.inner-right-md {
+	padding-right: 60px;
+}
+
+.inner-right-sm {
+	padding-right: 45px;
+}
+
+.inner-right-xs {
+	padding-right: 30px;
+}
+
+.outer {
+	margin-top: 120px;
+	margin-bottom: 120px;
+}
+
+.outer-md {
+	margin-top: 100px;
+	margin-bottom: 100px;
+}
+
+.outer-sm {
+	margin-top: 80px;
+	margin-bottom: 80px;
+}
+
+.outer-xs {
+	margin-top: 40px;
+	margin-bottom: 40px;
+}
+
+.outer-top {
+	margin-top: 120px;
+}
+
+.outer-top-md {
+	margin-top: 100px;
+}
+
+.outer-top-sm {
+	margin-top: 80px;
+}
+
+.outer-top-xs {
+	margin-top: 40px;
+}
+
+.outer-bottom {
+	margin-bottom: 120px;
+}
+
+.outer-bottom-md {
+	margin-bottom: 100px;
+}
+
+.outer-bottom-sm {
+	margin-bottom: 80px;
+}
+
+.outer-bottom-xs {
+	margin-bottom: 40px;
+}
+
+.center-block {
+	float: none;
+}
+
+.height-xs {
+	height: 30vh;
+}
+
+.height-sm {
+	height: 44vh;
+}
+
+.height-md {
+	height: 61vh;
+}
+
+.height-lg {
+	height: 90vh;
+}
+
+
+ul{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+a {
+    
+    -webkit-transition: all 0.2s linear 0s;
+    -moz-transition: all 0.2s linear 0s;
+    -o-transition: all 0.2s linear 0s;
+    transition: all 0.2s linear 0s;
+    outline: none!important;
+}
+
+a:hover,
+a:active,
+a:focus {
+    text-decoration: none;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+img[src="assets/images/blank.gif"], .lazy-load {
+  background: url("../images/ajax.gif") no-repeat scroll center center #ffffff;
+}
+
+
+p{
+	font-size: 14px;
+	line-height: 24px;
+	color: #727272;
+	letter-spacing: 0.01em;
+	margin-bottom: 24px;
+}
+
+.light-bg{
+	background-color: #fbfbfb;
+}
+
+.navbar-toggle{
+	display: block;
+}
+
+.block{
+	display: block;
+}
+
+.desat {
+    filter: url("../images/filters.svg#grayscale");
+    filter: gray;
+    -webkit-filter: grayscale(1);
+    
+    &:hover{
+        filter: none;
+    	-webkit-filter: grayscale(0);
+    }
+}
+
+.isotope,
+.isotope .isotope-item {
+	-webkit-transition-duration: 600ms;
+	   -moz-transition-duration: 600ms;
+	    -ms-transition-duration: 600ms;
+	     -o-transition-duration: 600ms;
+	        transition-duration: 600ms;
+}
+.isotope {
+	-webkit-transition-property: height, width;
+	   -moz-transition-property: height, width;
+	    -ms-transition-property: height, width;
+	     -o-transition-property: height, width;
+	        transition-property: height, width;
+}
+.isotope .isotope-item {
+	-webkit-transition-property: -webkit-transform, opacity;
+	   -moz-transition-property: -moz-transform, opacity;
+	    -ms-transition-property: -ms-transform, opacity;
+	     -o-transition-property: top, left, opacity;
+	        transition-property: transform, opacity;
+}
+
+.wow{
+	opacity: 0;
+}
+
+.canvas-slid ~ .overlay,
+.canvas-sliding ~ .overlay{
+	width: 100%;
+	height: 100%;
+	display: block;
+	position: fixed;
+	top: 0;
+	background-color: #fff;
+	opacity: 0.78;
+	z-index: 999;
+}

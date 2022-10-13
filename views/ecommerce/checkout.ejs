@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+	<div class="wrapper">
+
+
+		<section class="checkout container mt-5">
+			<div class="row">
+				<section class="billing-address col-md-4">
+					<header>
+						<h3 class="section-title"><span class="step-no">1.</span> Billing Address</h3>
+					</header>
+					<div class="billing-address-form">
+						<form action="/customer/checkout" method="POST">
+							<div class="form-group">
+								<label for="first-name">First Name</label>
+								<input type="text" class="form-control" name="fname" id="first-name">
+							</div>
+							<div class="form-group">
+								<label for="last-name">Last Name</label>
+								<input type="text" class="form-control" name="lname" id="last-name">
+							</div>
+							<div class="form-group">
+								<label for="email">Email Address</label>
+								<input type="email" class="form-control" name="email" id="email">
+							</div>
+							<div class="form-group">
+								<label for="street-address">Street Address</label>
+								<input type="text" class="form-control" name="address" id="street-address">
+							</div>
+							<div class="form-group">
+								<label for="city">City</label>
+								<input type="text" class="form-control" name="city" id="city">
+							</div>
+							<div class="form-group">
+								<label for="zip-code">Zip Code</label>
+								<input type="number" class="form-control" name="zip" id="zip-code">
+							</div>
+							<div class="form-group">
+								<label for="company">Phone</label>
+								<input type="number" class="form-control" name="phone" id="company">
+							</div>
+							<div class="form-group checkbox">
+								<label>
+									<input type="checkbox" name="newAccount"> Create an account for
+									later use
+								</label>
+							</div>
+							<!-- <div class="checkbox">
+						<label>
+							<input type="checkbox"> Ship to the same address
+						</label>
+					</div> -->
+
+					</div>
+				</section>
+
+				<div class="col-md-3">
+					<section class="shipping-method">
+						<header>
+							<h3 class="section-title"><span class="step-no">2.</span> Shipping Method
+							</h3>
+						</header>
+						<ul class="shipping-methods list-unstyled" id="radioSelect">
+							<li class="radio"><label><input class="radio1" type="radio" value="100" name="shipping">
+									Standard
+									PKR 100
+									<small>(3-7 business days)</small></label></li>
+							<li class="radio"><label><input class="radio1" type="radio" value="250" name="shipping">
+									Two Days
+									PKR 250
+									<small>(2 business days)</small></label></li>
+							<li class="radio"><label><input class="radio1" type="radio" value="400" name="shipping">
+									Next Day
+									PKR 400
+									<small>(2 business day)</small></label></li>
+						</ul>
+					</section>
+					<section class="shipping-method">
+						<header>
+							<h3 class="section-title"><span class="step-no">3.</span> Payment Method
+							</h3>
+						</header>
+						<ul class="payment-methods list-unstyled">
+							<li class="radio"><label><input type="radio" name="payment-method"> PayPal
+									Express</label>
+							</li>
+							<li class="radio"><label><input type="radio" name="payment-method"> Credit
+									Card</label></li>
+						</ul>
+					</section>
+				</div>
+				<section class="col-md-5">
+					<header>
+						<h3 class="section-title"><span class="step-no">4.</span> Review of Your Order
+						</h3>
+					</header>
+					<table class="table order-review-table">
+						<thead>
+							<tr>
+								<th>Product</th>
+								<th>Subtotal</th>
+							</tr>
+						</thead>
+						<tfoot id="subtotal">
+							
+							
+					
+						</tfoot>
+						<tbody id="checkCart">
+
+							
+						</tbody>
+					</table>
+
+					<table class="table order-review-table">
+						<tfoot id="ship">
+						
+					</tfoot>
+					</table>
+					<div class="checkout-action text-right" type="submit">
+						<button class="btn btn-primary">Place Order Now</button>
+					</div>
+					</form>
+				</section>
+			</div>
+		</section>
+		<!-- Modal -->
+	</div><!-- /.wrapper -->
+
+	<!-- JavaScript File -->
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+	<!-- JavaScript File -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+
+	<script>
+
+		$.ajax({
+			url: '/show-cart',
+			method: "GET",
+			success: function (data) {
+
+
+				// console.log("Showing The Checkout Pagae");
+				// console.log(data);
+				for (let p of Object.values(data.items)) {
+					// console.log("For in LOOP")
+					// console.log(p);
+					var val = `
+					<tr>
+					<td >
+			 <div class="product media">
+				<div class="media-left">
+					<img src="/productImages/${p.image}" data-echo="/productImages/${p.image}"
+					 	width="80px" height="100px" alt="Product Name" class="media-object">
+				</div>
+				<div class="media-body media-middle">
+					<h3 class="product-title"><span class="product-quantity">X ${p.qty}
+							</span>
+						${p.item.name}</h3>
+					<ul class="product-attributes">
+						<li>Brand : ${p.item.brand} </li>						
+					</ul>
+				</div>
+			</div>
+		</td>
+		<td>
+				<div class="prices">
+					PKR ${p.item.price}
+				</div>
+			</td>
+		</tr>
+		 `
+
+					$("#checkCart").append(val);
+				}
+				var subtotal = `
+					<tr>															
+					<th>Subtotal</th>
+					<td>PKR ${data.totalPrice}</td>
+					</tr>					
+					`
+				$("#subtotal").append(subtotal);
+				// Cheching the Shipping Value
+				$(document).ready(function () {
+					$('#radioSelect input').on('change', function () {
+						var selVal = $("[type='radio']:checked").val();
+
+						gtotal = parseInt(selVal) + data.totalPrice;
+
+
+						var ship = `
+								
+								<tr>
+								<th>Shipping &amp; Handling</th>
+								<td>PKR ${selVal}</td>]
+								</tr>
+								<tr>
+								<th><h3><strong>Grand Total</strong></h3></th>
+								<td>
+									<h3 class="prices">PKR ${gtotal}</h3>
+								</td>
+								</tr>
+							
+							`
+							$('#ship').empty();
+							$('#ship').append(ship);
+						});
+					});
+
+
+
+			},
+			error: function () {
+				console.log("error");
+			}
+		})
+	</script>
+
+</body>
+
+</html>

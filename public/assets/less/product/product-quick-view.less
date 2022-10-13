@@ -1,0 +1,86 @@
+.quick-modal{
+	.modal-dialog{
+		width: 1030px;
+
+		.modal-content{
+			box-shadow: none;
+			border-radius: 0px;
+
+			.modal-body{
+				padding: 0px;
+				.single-product-row{
+					.gallery-holder{
+						padding-right: 0px;
+						width: 50% !important;
+
+						.product-image-slider{
+							border-right: 5px solid #F6F6F6;
+                            padding: 24px 30px;
+
+                            .quick-view-slider{
+                            	margin-bottom: 0px;
+
+                            	.item{
+                            		background: #f6f6f8;
+                            		width: 450px;
+                            		height: 650px;
+                            		text-align: center;
+                            		&:before{
+                            			display: inline-block;
+                            			vertical-align: middle;
+                            			content: "";
+                            			height: 100%;
+                            		}
+                            		img{
+                            			display: inline-block;
+                            			vertical-align: middle;
+                            			width: auto;
+
+                            		}
+                            	}
+
+								.owl-controls{
+									top: 25px !important;
+									right: 13px;
+									 position: absolute;
+									 margin-top: 0px;
+
+									 .owl-dots{
+									 	.owl-dot{
+									 		display: block;
+										    margin-bottom: 15px;
+									 	}
+									 }									
+								}
+							}
+						}
+					}
+
+					.body-holder{
+						padding-left: 0;
+					    padding-right: 15px;
+					    .product-info{
+					    	padding: 35px 87px 20px 30px;
+					    }
+					}
+
+				}
+				
+				.remove-icon{
+					position: absolute;
+					right: 0px;
+					top: 0px;
+					background: #222222;
+					width: 42px;
+					height: 42px;
+					color: #fff;
+					text-align: center;
+					vertical-align: middle;
+					font-size: 30px;/*26px;*/
+					cursor: pointer;
+					line-height: 45px;/* 42px;*/
+				}
+			}
+		}
+	}
+}

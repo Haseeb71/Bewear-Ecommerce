@@ -1,0 +1,127 @@
+/*===================================================================================*/
+/*  PAGE : CHECKOUT
+/*===================================================================================*/
+
+.checkout{
+	padding-bottom: 90px;
+	
+	.section-title{
+		font-size: 18px;
+		line-height: 24px;
+		letter-spacing: 0.01em;
+		font-weight: @opensans-bold !important;
+		color: #000;
+		padding-bottom: 30px;
+
+		.step-no{
+			font-weight: @opensans-light;
+		}
+	}
+
+	section{
+		padding-bottom: 60px;
+	}
+
+	.shipping-methods, .payment-methods{
+		.radio{
+			&:last-child{
+				margin-bottom: 0;
+			}
+		}
+	}
+}
+
+.order-review-table{
+	thead{
+		tr > th, 
+		tr > td{
+			font-size: 14px;
+			color: #231f20;
+			letter-spacing: 0.01em;
+			font-weight: @opensans-normal;
+			padding: 10px 0;
+			border-bottom-width: 1px;
+		}
+	}
+
+	tfoot{
+		tr > td,
+		tr > th{
+			font-size: 14px;
+			line-height: 36px;
+			padding: 6.5px;
+		}
+
+		tr > th{
+			color: #231f20;
+			letter-spacing: 0.01em;
+			font-weight: @opensans-normal;
+			text-align: right;
+			padding-right: 53.5px;
+		}
+
+		tr:last-child > th,
+		tr:last-child > td{
+			border-bottom: 1px solid #eee;
+		}
+	}
+
+	tbody{
+		tr > td{
+			padding: 12px 12px 12px 0;
+			border-top: none;
+			vertical-align: middle;
+		}
+
+		tr:first-child > td{
+			padding-top: 20px;
+		}
+
+		tr:last-child > td{
+			padding-bottom: 20px;
+		}
+	}
+	.product{
+		.product-title{
+			font-size: 14px;
+			line-height: 18px;
+			text-transform: uppercase;
+			color: #000;
+			letter-spacing: 0.1em;
+			font-weight: @opensans-normal;
+			margin: 0 0 6px 0;
+
+			.product-quantity{
+				font-weight: @opensans-bold;
+				text-transform: lowercase;
+			}
+		}
+
+		.media-left{
+			padding-right: 30px;
+		}
+
+		.product-attributes{
+			padding: 0; margin: 0;
+			
+			> li{
+				font-size: 12px;
+				line-height: 17px;
+				letter-spacing: 0.01em;
+				color: #767374;
+			}
+		}
+	}
+
+	.prices{
+		font-weight: @opensans-extrabold;
+	}
+}
+
+.checkout-action{
+	padding-top: 10px;
+
+	.btn{
+		padding: 10px 40px;
+	}
+}

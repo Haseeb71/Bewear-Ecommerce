@@ -1,0 +1,58 @@
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bewaear||Ecommerce</title>
+    <!-- Bootstrap -->
+    <link href="/assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/css/jasny-bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/css/lightbox.css" rel="stylesheet">
+    <link href="/assets/css/bewear-icons.css" rel="stylesheet">
+    <link href="/assets/css/animate.min.css" rel="stylesheet">
+    <link href="/assets/css/owl.carousel.css" rel="stylesheet">
+    <link href="/assets/css/main.min.css" rel="stylesheet">
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+    <!-- Noty -->
+    <link href="lib/noty.css" rel="stylesheet">
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="assets/images/favicon.png">
+</head>
+
+<div id="shopping-cart-summary" class="navmenu-shopping-cart navmenu navmenu-default navmenu-fixed-right offcanvas">
+    <header>
+        <h3 class="section-title">Items <span id="cartCounter2" class="item-count"></span></h3>
+        <ul class="currency-block animate-dropdown">
+            <li class="dropdown">
+                <a href="#" data-toggle="dropdown" class="dropdown-toggle" aria-expanded="false"><strong>$</strong>
+                    US Dollars</a>
+
+                <ul role="menu" class="dropdown-menu">
+                    <li role="presentation"><a href="#" tabindex="-1" role="menuitem">EU Euro</a></li>
+                    <li role="presentation"><a href="#" tabindex="-1" role="menuitem">TL Turkish Lira</a></li>
+                    <li role="presentation"><a href="#" tabindex="-1" role="menuitem">INR Indian Rupee</a></li>
+                    <li role="presentation"><a href="#" tabindex="-1" role="menuitem">US Dollars</a></li>
+
+                </ul>
+            </li>
+        </ul>
+    </header>
+    <%if(session.cart){%>
+    <div class="cart-products">
+        <div class="cart-block-list">
+            <ul id="cart">
+               
+               
+            </ul>
+
+            <div class="cart-summary text-center inner-top-50">
+                <h5 class="cart-total">Your Total</h5>
+              <p class="cart-total-price"> PKR <span id="totalPrice"></span> </p>
+                <p class="instruction">shipping costs are calculated at the next step,before you pay.</p>
+                <a class="btn btn-primary btn-uppercase continue-shopping" href="/customer/checkout">continue to
+                    checkout</a>
+            </div>
+        </div>
+    </div>
+    <%}%>
+</div>
+

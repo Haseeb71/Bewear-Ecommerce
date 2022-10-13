@@ -1,0 +1,235 @@
+.product-holder{
+	padding: 0px;
+	display: inline-block;
+	min-height: 458px;
+	-webkit-transition: all 200ms ease-out;
+	-o-transition: all 200ms ease-out;
+	-moz-transition: all 200ms ease-out;
+	
+	.product{
+		position: relative;
+		padding-bottom: 15px;
+		background: #fff;
+		padding-top: 15px;
+		border: 1px solid transparent;
+
+		.image{
+			height: 310px;
+			text-align: center;
+			
+			&:before{
+				content: "";
+				display: inline-block;
+				height: 100%;
+				vertical-align: middle;
+			}
+			
+			img{
+				display: inline-block;
+				vertical-align: middle;
+			}
+		}
+
+		.product-info{
+			.quick-view{
+				display: none;
+				font-size: 14px;                
+				font-weight: @opensans-bold;
+				letter-spacing: 0.1em;
+				color: #000;
+				line-height: 22px;
+				padding: 9px 10px;
+				position: absolute;
+				text-align: center;
+				top: 54%;
+				width: 100%;
+				background: none repeat scroll 0 0 rgba(255, 255, 255, 0.698);
+				cursor: pointer;
+				left: 0px;
+
+				.icon{
+					font-size: 25px;
+					vertical-align: middle;
+				}	                
+			}
+
+			.color-picker{
+				display: inline-block;
+			}
+
+			.name{
+				font-size: 12px;                
+				font-weight: @opensans-normal;
+				letter-spacing: 0.1em;				
+				margin-top: 5px;
+				margin-bottom: 5px;
+				
+				a{
+					color: #000;
+					&:hover,
+					&:focus{
+						color: #7E7E7E;
+					}
+				}
+			}
+
+			.product-price{
+				ins{
+					text-decoration: none;
+					
+					span{
+						font-size: 15px;                
+						font-weight: @opensans-extrabold;
+						letter-spacing: 0.1em;
+						color: #000;
+					}
+				}
+			}
+
+			.buttons-holder{
+				display: none;
+				position: relative;
+				z-index: 100;
+				width: 100%;
+				
+				.add-cart-holder{
+					.cart-button{
+						padding: 10px 62px;
+					}
+				}
+				
+				.add-wishlist-holder{
+					margin-top: 12px;
+				
+					.wishlist-button{
+						font-size: 13px;
+						line-height: 24px;                
+						font-weight: @opensans-normal;
+						letter-spacing: 0.01em;
+						color: #797979;
+				
+						.icon{
+							font-size: 24px;
+							color: #000;
+							margin-right: 2px;
+							vertical-align: middle;
+							-webkit-transition: all 0.2s linear 0s;
+						    -moz-transition: all 0.2s linear 0s;
+						    -o-transition: all 0.2s linear 0s;
+						    transition: all 0.2s linear 0s;
+						}
+					}
+
+					&:hover,
+					&:focus{
+						.wishlist-button{
+							color: @black-text;
+						}
+						.icon{
+							color: #FF0000;
+						}
+					}
+				}
+			}
+		}
+
+	}
+
+	&:hover,
+	&:focus, &.test{
+		.product{
+			background-color: #FFFFFF;
+			position: absolute;
+			width: 100%;
+			z-index: 200;
+			border: 1px solid #dfdfdf;
+		}
+
+
+		.product-info{
+			.quick-view,
+			.buttons-holder{
+				display: block !important;
+			}
+		}
+	}
+
+	.ribbon{
+		position: absolute;		
+		font-size: 11px;
+		font-weight: 700;
+		line-height: 20px;
+		padding: 4px 14px;
+		text-transform: uppercase;
+		top: 2.5%;
+		z-index: 100;
+		
+		&:after{
+			border-left: 0 none;
+			border-right: 14px solid rgba(0, 0, 0, 0);
+			border-top-style: solid;
+			border-top-width: 28px;
+			content: "";
+			display: inline-block;
+			height: 0;
+			left: 0;
+			min-width: 68px;
+			position: absolute;
+			top: 0;
+			width: 100%;
+		}
+		
+		&.red{
+			background: rgba(0,0,0,0);
+			color: #fff;
+
+			&:after{
+				border-top-color: #F8484A;
+
+			}
+		}
+		
+		&.green{
+			background: rgba(0,0,0,0);
+			color: #fff;
+			&:after{
+				border-top-color: #59B210;
+			}
+		}
+		
+		&.blue{
+			background: rgba(0,0,0,0);
+			color: #fff;
+			&:after{
+				border-top-color: #407AC5;
+			}
+		}
+		
+		span{
+			margin-right: 11px;
+			position: relative;
+			z-index: 100;
+		}
+		
+		&:nth-child(2) {
+			margin-top: 30px;
+		}
+	}
+}
+
+.single-product-related-products, .single-product-wear-it{
+	.owl-item{
+		.product-holder{
+			width: 100%;
+		}
+
+		.product{
+			position: relative !important;
+		}
+
+		img{
+			max-width: 258px;
+			width: auto;
+		}
+	}
+}

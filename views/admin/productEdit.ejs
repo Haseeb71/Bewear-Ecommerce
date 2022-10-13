@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<body class="hold-transition sidebar-mini layout-fixed">
+
+  <div class="wrapper">
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+      <!-- Content Header (Page header) -->
+      <div class="content-header">
+        <div class="container-fluid">
+          <div class="row mb-2">
+            <div class="col-sm-6">
+              <h1 class="m-0">Add New Product</h1>
+            </div><!-- /.col -->
+            <div class="col-sm-6">
+              <ol class="breadcrumb float-sm-right">
+                <li class="breadcrumb-item"><a href="/dashboard">Home</a></li>
+                <li class="breadcrumb-item active">Dashboard v1</li>
+              </ol>
+            </div><!-- /.col -->
+          </div><!-- /.row -->
+        </div><!-- /.container-fluid -->
+      </div>
+      <!-- /.content-header -->
+      <!-- form -->
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="card card-primary w-100">
+              <div class="card-header">
+                <h3 class="card-title">New Product Details</h3>
+              </div>
+              <!-- /.card-header -->
+              <!-- form start -->
+              <form action="/product-edit/<%=product._id%>" method="POST" enctype="multipart/form-data">
+                <div class="card-body">
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Name</label>
+                    <input type="text" value="<%=product.name%>" class="form-control" name="name"
+                      id="exampleInputEmail1" placeholder="Enter Product Name">
+                  </div>
+                  <div class="mb-3">
+                    <label for="exampleFormControlTextarea1" class="form-label">Description</label>
+                    <textarea class="form-control" name="description" id="exampleFormControlTextarea1"
+                      placeholder="Description Here.." rows="3"><%=product.description%></textarea>
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Price</label>
+                    <input type="number" value="<%=product.price%>" name="price" class="form-control"
+                      id="exampleInputEmail1" placeholder="Price in PKR">
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Stock</label>
+                    <input type="number" value="<%=product.stock%>" name="stock" class="form-control"
+                      id="exampleInputEmail1" placeholder="Total Stock">
+                  </div>
+                </div>
+                <!-- /.card-body -->
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card card-secondary">
+              <div class="card-header">
+                <h3 class="card-title">Other Details</h3>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-sm-6">
+                    <!-- checkbox -->
+                    <label for="">Brands:</label>
+                    <div class="form-group">
+                      <% if(brands && brands.length>0){ %>
+                        <% brands.forEach(items=>{%>
+
+                          <div class="form-check">
+                            <input class="form-check-input" type="radio" <% if(items.slug==product.brand){ %>
+                            checked
+                            <% } %>
+                              value="<%=items.slug%>" name="brands" id="<%=items.slug%>" />
+                                  <label class="form-check-label" for="flexRadioDefault1">
+                                    <%=items.name%>
+                                  </label>
+                          </div>
+                          <%})%>
+                            <%}%>
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <!-- radio -->
+                    <label for="">Post Type:</label>
+                    <div class="form-group">
+                      <div class="custom-control custom-radio">
+                        <input class="custom-control-input" type="radio" id="customRadio1" value="publish" name="status"
+                          <%=product.status==='publish' ? 'checked' : '' %>>
+                        <label for="customRadio1" class="custom-control-label">Publish</label>
+                      </div>
+                      <div class="custom-control custom-radio">
+                        <input class="custom-control-input" type="radio" value="draft" id="customRadio2" name="status"
+                          <%=product.status==='draft' ? 'checked' : '' %>>
+                        <label for="customRadio2" class="custom-control-label">Draft</label>
+                      </div>
+                    </div>
+                    <label for="">Categories:</label>
+                    <%for(let i=0;i<cat.length;i++){%>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="check1" name="category"
+                        <%for(let j=0;j<pcat.length;j++){%>
+                        <%if(cat[i].slug == pcat[j]){ %>
+                          checked
+                          <%} %>
+                          <%} %>
+                          value="<%= cat[i].slug%>"  >
+                        <label class="form-check-label">
+                          <%= cat[i].name %>
+                        </label>
+                      <%}%>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-sm-6">
+                    <!-- select -->
+                    <div class="form-group">
+                      <label>Stock Status</label>
+                      <select class="custom-select" name="sStatus">
+                        <option value="In Stock" <%=product.stockStatus==='In Stock' ? 'selected' : '' %> >In Stock</option>
+                        <option value="Out of Stock" <%=product.stockStatus==='Out of Stock' ? 'selected' : '' %>>Out of Stock</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="custom-control custom-switch custom-switch-off-secondary custom-switch-on-danger">
+                    <input type="checkbox" class="custom-control-input" value="featured" name="featured"
+                      id="customSwitch3" <%=product.featured=='featured' ? 'checked' : '' %>>
+                    <label class="custom-control-label" for="customSwitch3">Featured</label>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <!-- <label for="customFile">Custom File</label> -->
+
+                  <div class="custom-file">
+                    <input type="file" class="custom-file-input" name="image" id="customFile" multiple>
+                    <label class="custom-file-label fw-bold text-primary" for="customFile">Choose file</label>
+                  </div>
+                  <div class="card-footer">
+                    <button type="submit" class="btn btn-primary w-100">Submit</button>
+                  </div>
+                </div>
+                <div class="form-group">
+                </div>
+              </div>
+              <!-- /.card-body -->
+            </div>
+          </div>
+
+          </form>
+          <!--/ form -->
+        </div>
+      </div>
+    </div>
+
+    <!-- /.content-wrapper -->
+    <!-- Control Sidebar -->
+    <!-- /.control-sidebar -->
+  </div>
+  <!-- ./wrapper -->
+</div>
+
+<div class="container mb-5">
+  <table>
+    <tbody>
+      <% image.forEach(items=>{%>
+      <tr>
+        <td><img src="/productImages/<%=items.image%>" class="m-1" alt="image not found" width="70px" height="70px" ></td>
+        <td><a href="/image-delete/<%=items._id%>" class="btn btn-danger btn-sm">Delete</a></td>
+      </tr>
+      <%})%>
+    </tbody>
+  </table>
+</div>
+  <script>
+    CKEDITOR.replace('exampleFormControlTextarea1');
+  </script>
+</body>
+
+</html>

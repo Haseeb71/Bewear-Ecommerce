@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  	<title>Bewaer Login</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	
+	<link rel="stylesheet" href="/login/css/style.css">
+
+	</head>
+	<body>
+	<section class="ftco-section text-center">
+		<div class="loader">
+			<div class="box box1"></div>
+			<div class="box box2"></div>
+			<div class="box box3"></div>
+			<div class="box box4"></div>
+			<div class="box box5"></div>
+			<div class="box box6"></div>
+			<div class="box box7"></div>
+			<div class="box box8"></div>
+		</div>
+        <a href="/" class="btn btn-dark">BEWEAR</a>
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-md-12 col-lg-10">
+
+					<% if( success && success.length>0) { %>
+						<div class="alert bg-success">
+							<span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+							<%=success%>
+						  </div>
+						<% } %> 
+						<% if(error && error.length>0) { %>
+							<div class="alert bg-danger">
+								<span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+								<%=error%>
+							  </div>
+						  <% } %> 
+
+					<div class="wrap d-md-flex">
+						<div class="img" style="background-image: url(/login/images/bg-1.jpg);">
+			      </div>
+                  <div class="login-wrap p-4 p-md-5 text-left">
+			      	<div class="d-flex">
+			      		<div class="w-100">
+			      			<h3 class="mb-4">Sign In</h3>
+			      		</div>
+								<div class="w-100">
+									<p class="social-media d-flex justify-content-end">
+										<a href="#" class="social-icon d-flex align-items-center justify-content-center"><span class="fa fa-facebook"></span></a>
+										<a href="#" class="social-icon d-flex align-items-center justify-content-center"><span class="fa fa-twitter"></span></a>
+									</p>
+								</div>
+			      	</div>
+							<form action="/customer/login" method="POST" class="signin-form">
+			      		<div class="form-group mb-3">
+			      			<label class="label text-left" for="name">Email</label>
+			      			<input type="email" name="email" class="form-control" placeholder="Email" required>
+			      		</div>
+		            <div class="form-group mb-3">
+		            	<label class="label text-left" for="password">Password</label>
+		              <input type="password" name="password" class="form-control" placeholder="Password" required>
+		            </div>
+		            <div class="form-group">
+		            	<button type="submit" class="form-control btn btn-primary rounded submit px-3">Sign In</button>
+		            </div>
+		            <div class="form-group d-md-flex">
+		            	<div class="w-50 text-left">
+			            	<label class="checkbox-wrap checkbox-primary mb-0">Remember Me
+									  <input type="checkbox" checked>
+									  <span class="checkmark"></span>
+										</label>
+									</div>
+									<div class="w-50 text-md-right">
+										<a href="#">Forgot Password</a>
+									</div>
+		            </div>
+		          </form>
+		          <p class="text-center">Not a member? <a href="/customer/signup">Sign Up</a></p>
+		        </div>
+		      </div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<script src="/login/js/jquery.min.js"></script>
+  <script src="/login/js/popper.js"></script>
+  <script src="/login/js/bootstrap.min.js"></script>
+  <script src="/login/js/main.js"></script>
+
+	</body>
+</html>
+
