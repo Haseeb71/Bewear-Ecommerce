@@ -3,8 +3,6 @@ LoginController = require("../controller/LoginController"),
 auth = require("../middlewares/loginAuth"),
 router = express.Router()
 
-
-
 router.get("/admin-login",LoginController.login);
 router.post("/admin-login",LoginController.loginPost);
 router.get("/logout",LoginController.logout);
